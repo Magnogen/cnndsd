@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://magnogen.net/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <header>
+      <h1>cnndsd</h1>
+      <span id="tagline">custom neural network does sound design</span>
+    </header>
+    <main>
+      <p>
+        soooo, i tried to get a neural network to make sound.
+        it worked, and i got some interesting results.
+        this is a little article that i made to show off what those sounded like, my thoughts, and how i created them.
+      </p>
+      <p>
+        if you'd like, you can download each file by clicking on the link.
+        alternatively you can also download a zip with all of them in:
+      </p>
+      <a download href="https://magnogen.net/cnndsd/cnndsd.zip">
+        cnndsd_raw.zip
+      </a>
+      <a download href="https://magnogen.net/cnndsd/cnndsd.zip">
+        cnndsd_sample_pack.zip
+      </a>
+      <p>
+        alright. without further ado, lets get cnndsd-ing!
+        ...that is definitely not a word. lol
+      </p>
+      <p>
+        this is the first one i liked.
+        it kind of sounds like a lead.
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_03.mp3">
+          custom_neural_network_does_sound_design_03.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_03.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_07.mp3">
+          custom_neural_network_does_sound_design_07.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_07.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_09.mp3">
+          custom_neural_network_does_sound_design_09.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_09.mp3"></audio>
+      </p>
+      <p>
+        they're slightly changing over time now.
+        i guess that means i've got to explain how it works.
+        if you don't want to read about this, fee free to skip ahead :&rpar;
+      </p>
+      <p>
+        first, i generate a random neural network with arbitrary weights and biases.
+        i let the computer pick them randomly from between 0 and 1.
+        i use a similar library to what i use for <a href="https://magnogen.net/Graidients">Graidients</a> for this step.
+        the network has <code>length</code> amount of inputs, as many hidden layers and nodes as i want, and one output for the sample it produces.
+      </p>
+      <p>
+        <code>length</code> can be defined to be whatever i like, usually it's a low number like <code>1</code> for simple sounding noises,
+        or up to <code>10</code> for more complicated ones.
+        the hidden layers also have an effect on the sound, but it's hard to put into words.
+        all the activator functions are a sine wave, and 
+        i have quite a bit of artistic control with all the parameters i can set!
+      </p>
+      <p>
+        if you know anything about neural networks, you'll know i haven't mentioned the inputs yet.
+        that's probably the most complicated bit - essentially, there's a history array for what the neural network has already produced.
+        this history can get quite long, but it's only numbers so it doesn't take up too much space.
+        the network selects from this history some samples, such as the one just before, then the second, the 4th, 8th, 16th, 32nd, etc.
+        all the way until it has <code>length</code> samples.
+      </p>
+      <p>
+        i can also specify a <code>gap</code> parameter for it to skip some, for instance if the gap was 6, it would start at 2 to the power of 6, then keep going until it has <code>length</code> inputs.
+        the higher the <code>gap</code> parameter, the lower the pitch sounds, sort of.
+        it's all a bit complicated to explain.
+        i'm not even sure if i understand it myself haha.
+      </p>
+      <p>
+        anyway, lets get back to the noises!
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_14.mp3">
+          custom_neural_network_does_sound_design_14.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_14.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_16.mp3">
+          custom_neural_network_does_sound_design_16.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_16.mp3"></audio>
+      </p>
+      <p>
+        i liked that one. its like a dubstep growl. very cool.
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_18.mp3">
+          custom_neural_network_does_sound_design_18.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_18.mp3"></audio>
+      </p>
+      <p>
+        this one's a little weird.
+        it sounded like a dud to start with, then it had a sort of rhythm to it.
+        i think it had a higher <code>length</code> parameter than the others.
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_22.mp3">
+          custom_neural_network_does_sound_design_22.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_22.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_24.mp3">
+          custom_neural_network_does_sound_design_24.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_24.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_27.mp3">
+          custom_neural_network_does_sound_design_27.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_27.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_28.mp3">
+          custom_neural_network_does_sound_design_28.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_28.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_33.mp3">
+          custom_neural_network_does_sound_design_33.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_33.mp3"></audio>
+      </p>
+      <p>
+        another beat-like one, it's growing in intensity too - maybe like in a build up?
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_34.mp3">
+          custom_neural_network_does_sound_design_34.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_34.mp3"></audio>
+      </p>
+      <p>
+        du dudu dudu dudu dudu dudu.
+        nodding my head to that.
+        has my neural network mastered psytrance already?
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_36.mp3">
+          custom_neural_network_does_sound_design_36.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_36.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_37.mp3">
+          custom_neural_network_does_sound_design_37.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/custom_neural_network_does_sound_design_37.mp3"></audio>
+      </p>
+      <p>
+        two more, and then we're on to another section!
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/neural_network_does_sound_design_47.mp3">
+          neural_network_does_sound_design_47.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/neural_network_does_sound_design_47.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/neural_network_does_sound_design_48.mp3">
+          neural_network_does_sound_design_48.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/neural_network_does_sound_design_48.mp3"></audio>
+      </p>
+      <p>
+        nodc
+      </p>
+      <p>
+        i challenged a few people - in various discord servers - to make some sort of music with these sounds.
+        one of them got back to me with a little masterpiece, though they mentioned the following:
+      </p>
+      <blockquote>
+        <p>
+          its really hard to make them sound normal since the sound is not oscilating around 0 but like shifted up
+          <br>
+          <br>
+          the top is what normal sounds would be like
+          <br>
+          the bottom is what the network made
+        </p>
+        <img src="https://magnogen.net/cnndsd/pngs/dc_image.png" alt="">
+      </blockquote>
+      <p>
+        - <a href="https://tamkish.bandcamp.com/">Tamkish</a>
+      </p>
+      <p>
+        while i did sort of fix this to make the sounds cover the entire range of -1 to 1, rather than 0 to 1,
+        i didn't fully fix the issue they were facing.
+        i might just have to edit each sound to make more sense waveform-wise.
+        you can find that sample pack at the top of the page in a zip.
+      </p>
+      <p>
+        so, lets have a look at a few more i made after the dc offset "fix".
+        beware, they are doubly as loud.
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_01.mp3">
+          cnndsd_nodc_01.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_01.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_03.mp3">
+          cnndsd_nodc_03.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_03.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_07.mp3">
+          cnndsd_nodc_07.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_07.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_14.mp3">
+          cnndsd_nodc_14.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_14.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_23.mp3">
+          cnndsd_nodc_23.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_23.mp3"></audio>
+      </p>
+      <p>
+        its actually quite fun to just cycle through and find ones i like, though it takes a while sometimes.
+        some of them are metallic sounding, like this next one, and others are just silence.
+        fortunately for you, i've removed the boring ones.
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_28.mp3">
+          cnndsd_nodc_28.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_28.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_31.mp3">
+          cnndsd_nodc_31.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_31.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_33.mp3">
+          cnndsd_nodc_33.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_nodc_33.mp3"></audio>
+      </p>
+      <p>
+        adjusting
+      </p>
+      <p>
+        alright! time for some adjustments.
+        i had an idea while i was getting ready for bed - what if i adjusted the weights and biases while the sound was being made?
+        how would that sound, would it result in mutating sounds? certainly an interesting thought.
+        here's how it went.
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_01.mp3">
+          cnndsd_adjusting_01.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_01.mp3"></audio>
+      </p>
+      <p>
+        certainly a bit more random sounding, almost like a scream but the screamer is running out of breath.
+        yeah... lets keep going!
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_02.mp3">
+          cnndsd_adjusting_02.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_02.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_03.mp3">
+          cnndsd_adjusting_03.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_03.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_05.mp3">
+          cnndsd_adjusting_05.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_05.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_08.mp3">
+          cnndsd_adjusting_08.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_08.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_11.mp3">
+          cnndsd_adjusting_11.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_11.mp3"></audio>
+      </p>
+      <p class="music">
+        <a class="blue" download href="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_14.mp3">
+          cnndsd_adjusting_14.mp3
+        </a>
+        <audio controls src="https://magnogen.net/cnndsd/mp3s/cnndsd_adjusting_14.mp3"></audio>
+      </p>
+      <p>
+        anyway, this has been fun.
+        if you want to make a song like tamkish did, i would love to hear that.
+        see you next time!
+      </p>
+    </main>
+  </body>
+</html>
